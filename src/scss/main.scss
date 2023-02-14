@@ -1,0 +1,147 @@
+@use "i_index" as *;
+$sith:rgb(237, 111, 111);
+$jedi: rgb(115, 237, 115);
+        
+
+body{
+    font-family: "lucida console", monospace;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    background-color: #000;
+    min-height: 100vh;
+    padding: 20px;
+};
+
+
+#Jedi{
+    height: 600px;
+    width: 600px;
+    border: 5px solid green;
+     text-align: center;
+      display: flex;
+justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #000;
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #999;
+  margin: 20px;
+};
+
+
+#Sith{
+    height: 600px;
+    width: 600px;
+    border: 5px solid red;
+    text-align: center;
+    color: $sith;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #000;
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #999;
+  margin: 20px;
+};
+
+#results{
+    height: 600px;
+    width: 600px;
+    border: 5px solid rgb(244, 244, 10);
+    text-align: center;  
+    color: white;
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #999;
+  margin: 20px;
+    
+        div {
+            font-size: 18px;
+            padding: 20px;
+
+        }
+    }
+
+#sith-info{
+    color: $sith;
+    font-size: 20px;
+};
+
+#jedi-info{
+    color: $jedi;
+    font-size: 20px;
+    
+}
+
+#showsith {
+    background-color: rgb(195, 22, 22);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+  };
+
+  #showsith:hover {
+    background-color: rgb(90, 9, 9);
+  }
+
+#showjedi {
+    background-color: rgb(22, 195, 54);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+  };
+
+  #showjedi:hover {
+    background-color: rgb(127, 230, 99);
+  }
+
+
+  @media (max-width: 480px) {
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      
+    };
+  }
+
+  #search-input{
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+  };
+
+  #search-btn{
+    @include searchbtn;
+    
+  };
+
+  #results{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+ }
+
+
