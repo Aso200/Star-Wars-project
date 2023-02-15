@@ -49,6 +49,7 @@ interface Character {
 }
 //funktion för fetchen så jag kan lägga in det i click och enter
 async function searchCharacters(searchTerm: string) {
+  try{
   const response = await fetch(
     `https://swapi.dev/api/people?search=${searchTerm}`
   );
@@ -61,6 +62,9 @@ async function searchCharacters(searchTerm: string) {
     characterInfo.textContent = characterName;
     resultsSection.append(characterInfo);
   });
+} catch (error) {
+  console.error(error);
+};
   
 };
 // click funktion
