@@ -10,13 +10,7 @@ const search = document.querySelector("#search") as HTMLElement;
 const searchInput = document.querySelector("#search-input") as HTMLInputElement;
 const searchBtn = document.querySelector("#search-btn") as HTMLButtonElement;
 const resultsSection = document.querySelector("#result") as HTMLElement;
-const information = document.querySelector("#info") as HTMLElement
-
-interface character {
-  age: number;
-  name: string;
-  films: string[];
-}
+const information = document.querySelector("#info") as HTMLElement;
 
 btnJedi.addEventListener("click", async () => {
   try {
@@ -49,24 +43,23 @@ interface Character {
 }
 //funktion för fetchen så jag kan lägga in det i click och enter
 async function searchCharacters(searchTerm: string) {
-  try{
-  const response = await fetch(
-    `https://swapi.dev/api/people?search=${searchTerm}`
-  );
-  const data = await response.json();
-  const characters = data.results;
-  resultsSection.innerHTML = "";
-  characters.forEach((character: Character) => {
-    const characterName = character.name as string;
-    const characterInfo = document.createElement("p");
-    characterInfo.textContent = characterName;
-    resultsSection.append(characterInfo);
-  });
-} catch (error) {
-  console.error(error);
-};
-  
-};
+  try {
+    const response = await fetch(
+      `https://swapi.dev/api/people?search=${searchTerm}`
+    );
+    const data = await response.json();
+    const characters = data.results;
+    resultsSection.innerHTML = "";
+    characters.forEach((character: Character) => {
+      const characterName = character.name as string;
+      const characterInfo = document.createElement("p");
+      characterInfo.textContent = characterName;
+      resultsSection.append(characterInfo);
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
 // click funktion
 searchBtn.addEventListener("click", () => {
   const searchTerm = searchInput.value;
@@ -80,26 +73,3 @@ searchInput.addEventListener("keyup", (event) => {
   }
 });
 
-/*if (characters.length === 1) {
-    const character = characters[0];
-    const characterName = character.name;
-    const characterInfo = document.createElement("p");
-    characterInfo.textContent = characterName;
-    resultsSection.append(characterInfo);
-  } else {
-    const errorMessage = document.createElement("p");
-    errorMessage.textContent = "character not found";
-    resultsSection.append(errorMessage);
-  }*/
-
-/*const foundChar = characters.find((char:Character) => char.name.toLowerCase() === searchTerm.toLowerCase());
-    if (character) {
-      const characterName = character.name;
-      const characterInfo = document.createElement('p');
-      characterInfo.textContent = characterName;
-      resultsSection.append(characterInfo);
-    } else {
-      const errorMessage = document.createElement('p');
-      errorMessage.textContent = 'Character not found';
-      resultsSection.append(errorMessage);
-});*/

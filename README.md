@@ -1,5 +1,19 @@
 # Star-Wars-project
-Mitt Star-Wars inlämning 
+My Starwars API project
 
-Clona ner repot genom att använda http länken
+--------How to use --------
+
+Clone down the project using the http or ssh link / git clone 
+You have 2 regular buttons for the most popular jedi/sith
+the third button u can search for all characters in the starwars films
+
+--------Technologies---------
+
+° Typescript
+° SASS
+° AJAX
+° HTML
+
+
+
 
