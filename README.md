@@ -19,4 +19,6 @@ the third button u can search for all characters in the starwars films
 
 
 
+the api i used is the star wars api https://swapi.dev/api/
+
 
