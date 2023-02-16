@@ -1,5 +1,6 @@
 # Star-Wars-project
 My Starwars API project
+image.png
 
 --------How to use --------
 
